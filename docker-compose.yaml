@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  buyer-backend:
+    build: .
+    container_name: buyer-backend
+    ports:
+      - "8989:8989" 
+
+    networks:
+      - buyer-backend
+
+networks:
+  buyer-backend:
+    driver: bridge
