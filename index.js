@@ -10,12 +10,14 @@ import cors from "cors"
 configDotenv();
 
 const app = express();
-app.use(cors())
+
+// CORS middleware configuration to allow all origins
+app.use(cors({ origin: "*" })); // This allows all domains
 app.use(express.json());
-app.use('/user',router)
-app.use('/user',rootRouter)
-app.use('/user',address)
-app.use('/user',wishlist)
+app.use('/user', router);
+app.use('/user', rootRouter);
+app.use('/user', address);
+app.use('/user', wishlist);
 
 const port = process.env.PORT || 8989;
 
